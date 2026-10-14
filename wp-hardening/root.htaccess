@@ -1,0 +1,9 @@
+# BEGIN nochain-hardening
+# Goes at the TOP of public_html/.htaccess, above "# BEGIN WordPress".
+# Refuses any PHP file whose name ends in a 10-digit Unix timestamp
+# (e.g. custom.file.4.1789001503.php), anywhere on the site. That is the
+# naming the nochain dropper uses; nochain-scan.sh flags the same shape.
+<FilesMatch "[-_.]1[0-9]{9}\.(?i:php[0-9]?|phtml|phar)$">
+  Require all denied
+</FilesMatch>
+# END nochain-hardening

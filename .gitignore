@@ -1,0 +1,28 @@
+# --- OS / editor ---
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+!*.pub
+*.p12
+credentials.json
+*service-account*.json
+
+# --- Logs / caches ---
+*.log
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- Site data / scanner output: never commit (contains visitor IPs, findings) ---
+*.csv
+nochain-report-*.txt
+nochain-removed-*.tar.gz
+nochain-quarantine/

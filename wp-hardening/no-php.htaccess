@@ -1,0 +1,8 @@
+# BEGIN nochain-hardening
+# Goes in wp-content/uploads/.htaccess and wp-content/upgrade/.htaccess.
+# Nothing in these folders should ever run as PHP over the web. (WordPress
+# updates still work: they include files from upgrade/ directly, not by URL.)
+<FilesMatch "\.(?i:php[0-9]?|phtml|phar|pht|phps)$">
+  Require all denied
+</FilesMatch>
+# END nochain-hardening
